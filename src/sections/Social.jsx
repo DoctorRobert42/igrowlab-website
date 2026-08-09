@@ -33,7 +33,7 @@ function TelegramIcon({ size = 22 }) {
 
 export function Social() {
   return (
-    <section style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 24px', textAlign: 'center' }}>
+    <section style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px 40px', textAlign: 'center' }}>
       {/* Heading styled consistently with ComingSoon's "Get the app" h2
           (fontSize 26, fontWeight 700, color C.text) - the page's real
           single-heading pattern. */}
