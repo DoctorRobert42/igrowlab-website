@@ -1,0 +1,15 @@
+/* @font-face block copied verbatim from igrowlab's src/components/ui.jsx:68-73 */
+@font-face{font-family:'Lexend';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/lexend-v26-latin_latin-ext-300.woff2') format('woff2');}
+@font-face{font-family:'Lexend';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/lexend-v26-latin_latin-ext-regular.woff2') format('woff2');}
+@font-face{font-family:'Lexend';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/lexend-v26-latin_latin-ext-500.woff2') format('woff2');}
+@font-face{font-family:'Lexend';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/lexend-v26-latin_latin-ext-600.woff2') format('woff2');}
+@font-face{font-family:'Lexend';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/lexend-v26-latin_latin-ext-700.woff2') format('woff2');}
+@font-face{font-family:'Lexend';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/lexend-v26-latin_latin-ext-800.woff2') format('woff2');}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#F9F8EC;color:#3D4144;font-family:'Lexend',sans-serif;-webkit-font-smoothing:antialiased;}
+button,input{font-family:'Lexend',sans-serif;}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;}
+input::placeholder{color:#B8C4BE;}
