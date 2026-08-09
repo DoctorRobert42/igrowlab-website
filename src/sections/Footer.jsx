@@ -1,14 +1,9 @@
 import { WordMark } from '../components/WordMark';
 import { C } from '../theme';
 
-// PLACEHOLDER hrefs - the app's legal docs (Terms/Privacy/AI/Impressum)
-// currently only exist as in-app content (Settings screen), not as
-// standalone public URLs on igrowlab.app. Needs real routes before launch.
 const LINKS = [
-  { label: 'Terms', href: '#' },
-  { label: 'Privacy', href: '#' },
-  { label: 'AI', href: '#' },
-  { label: 'Impressum', href: '#' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Impressum', href: '/impressum' },
 ];
 
 export function Footer() {

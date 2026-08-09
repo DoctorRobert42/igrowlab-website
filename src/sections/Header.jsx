@@ -2,7 +2,7 @@ import { WordMark } from '../components/WordMark';
 import { LogoImg } from '../components/LogoImg';
 import { C } from '../theme';
 
-export function Header() {
+export function Header({ waitlistHref = '#waitlist' }) {
   return (
     <header
       style={{
@@ -32,7 +32,7 @@ export function Header() {
             the app's "See Pro" button (ui.jsx:747) - same accentPale/accent/accentLight
             triad as PBtn, at a smaller radius/padding for this compact inline context. */}
         <a
-          href="#waitlist"
+          href={waitlistHref}
           style={{
             background: C.accentPale,
             color: C.accentLight,
