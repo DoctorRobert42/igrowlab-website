@@ -24,8 +24,6 @@ export function Hero() {
             }}
           >
             Grow by data, not by guesswork.
-            <br />
-            From growers, for growers.
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMid, marginBottom: 30, maxWidth: 480 }}>
             iGrow.lab tracks EC, pH, and runoff the way a serious grower actually thinks.
