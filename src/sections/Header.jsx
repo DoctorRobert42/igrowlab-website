@@ -24,10 +24,10 @@ export function Header({ waitlistHref = '#waitlist' }) {
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <LogoImg size={36} />
           <WordMark size={20} />
-        </div>
+        </a>
         {/* Compact variant of the real pale-tint button pattern, copied verbatim from
             the app's "See Pro" button (ui.jsx:747) - same accentPale/accent/accentLight
             triad as PBtn, at a smaller radius/padding for this compact inline context. */}
