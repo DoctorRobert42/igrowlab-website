@@ -27,7 +27,10 @@ function StoreBadge({ label, sublabel }) {
 export function ComingSoon() {
   return (
     <section style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 24px 72px', textAlign: 'center' }}>
-      <div style={{ fontSize: 12, color: C.textDim, marginBottom: 16 }}>Coming soon</div>
+      {/* Heading styled consistently with the Waitlist section's h2 (fontSize 26,
+          fontWeight 700, color C.text) - the page's real single-heading pattern. */}
+      <h2 style={{ fontSize: 26, fontWeight: 700, color: C.text, marginBottom: 8 }}>Get the app</h2>
+      <div style={{ fontSize: 13, color: C.textDim, marginBottom: 20 }}>Coming soon</div>
       <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
         <StoreBadge sublabel="Download on the" label="App Store" />
         <StoreBadge sublabel="Get it on" label="Google Play" />

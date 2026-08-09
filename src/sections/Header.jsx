@@ -28,13 +28,15 @@ export function Header() {
           <LogoImg size={36} />
           <WordMark size={20} />
         </div>
-        {/* Compact primary button style copied verbatim from the app's "Unlock Pro"
-            button (ui.jsx:731): solid C.accent fill, radius 12, padding "10px 20px". */}
+        {/* Compact variant of the real pale-tint button pattern, copied verbatim from
+            the app's "See Pro" button (ui.jsx:747) - same accentPale/accent/accentLight
+            triad as PBtn, at a smaller radius/padding for this compact inline context. */}
         <a
           href="#waitlist"
           style={{
-            background: C.accent,
-            color: C.white,
+            background: C.accentPale,
+            color: C.accentLight,
+            border: `1px solid ${C.accent}`,
             fontWeight: 700,
             fontSize: 13.5,
             padding: '10px 20px',

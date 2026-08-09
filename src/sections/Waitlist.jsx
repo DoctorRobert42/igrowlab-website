@@ -71,17 +71,18 @@ export function Waitlist() {
                 outline: 'none',
               }}
             />
-            {/* Compact primary button style copied verbatim from the app's
-                "Unlock Pro" button (ui.jsx:731). */}
+            {/* Compact variant of the real pale-tint button pattern, copied verbatim
+                from the app's "See Pro" button (ui.jsx:747) - see Hero.jsx/Header.jsx
+                for the fuller PBtn recon note. */}
             <button
               type="submit"
               disabled={status === 'loading'}
               style={{
-                background: C.accent,
-                color: C.white,
+                background: C.accentPale,
+                color: C.accentLight,
+                border: `1px solid ${C.accent}`,
                 fontWeight: 700,
                 fontSize: 13.5,
-                border: 'none',
                 borderRadius: 12,
                 padding: '10px 20px',
                 cursor: status === 'loading' ? 'default' : 'pointer',

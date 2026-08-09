@@ -30,17 +30,22 @@ export function Hero() {
           <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMid, marginBottom: 30, maxWidth: 480 }}>
             iGrow.lab tracks EC, pH, and runoff the way a serious grower actually thinks.
           </p>
-          {/* Full-width primary button style copied verbatim from the app's "Start Pro"
-              button (ui.jsx:634-636): solid C.accent fill, radius 14, padding "15px 0". */}
+          {/* Real primary-button style, copied verbatim from PBtn (ui.jsx:266-284) -
+              the app's actual shared "Primary Button" component, used pervasively
+              across EnvForm/PlantForm/LogTab/EditSheets/PlantLifecycleSheets for
+              Save/Create/Confirm actions. Pale-tint fill + accent border + accent
+              text, NOT a solid opaque fill (that pattern only appears once, in the
+              Paywall sheet - confirmed it's the outlier, not the app's standard). */}
           <a
             href="#waitlist"
             style={{
               display: 'inline-block',
-              background: C.accent,
-              color: C.white,
+              background: C.accentPale,
+              color: C.accentLight,
+              border: `1px solid ${C.accent}`,
               fontWeight: 700,
-              fontSize: 15,
-              padding: '15px 28px',
+              fontSize: 14,
+              padding: '14px 28px',
               borderRadius: 14,
             }}
           >

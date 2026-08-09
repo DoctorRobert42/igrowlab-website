@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { EyebrowLabel } from '../components/EyebrowLabel';
 import { C } from '../theme';
 
 const FAQ_ITEMS = [
@@ -92,9 +91,8 @@ export function FAQ() {
 
   return (
     <section style={{ maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
-      <EyebrowLabel style={{ textAlign: 'center' }}>Questions</EyebrowLabel>
       <h2 style={{ fontSize: 26, fontWeight: 700, color: C.text, textAlign: 'center', marginBottom: 8 }}>
-        Frequently asked
+        Frequently asked questions
       </h2>
       <div style={{ marginTop: 32 }}>
         {FAQ_ITEMS.map((item, i) => (
