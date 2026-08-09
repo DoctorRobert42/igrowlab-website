@@ -57,7 +57,6 @@ function ProfessorCard() {
         background: C.leaf,
         borderRadius: R.card,
         padding: '22px 24px',
-        gridColumn: 'span 2',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
