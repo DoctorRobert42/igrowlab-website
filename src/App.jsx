@@ -18,8 +18,8 @@ export default function App() {
       <Features />
       <Philosophy />
       <ComingSoon />
-      <Waitlist />
       <Social />
+      <Waitlist />
       <FAQ />
       <Footer />
     </div>

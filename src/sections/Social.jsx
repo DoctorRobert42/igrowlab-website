@@ -33,13 +33,19 @@ function TelegramIcon({ size = 22 }) {
 
 export function Social() {
   return (
-    <section style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 24px', display: 'flex', justifyContent: 'center', gap: 16 }}>
-      <a href="https://www.instagram.com/igrow.lab" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <InstagramIcon />
-      </a>
-      <a href="https://t.me/iGrow_lab" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-        <TelegramIcon />
-      </a>
+    <section style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 24px', textAlign: 'center' }}>
+      {/* Heading styled consistently with ComingSoon's "Get the app" h2
+          (fontSize 26, fontWeight 700, color C.text) - the page's real
+          single-heading pattern. */}
+      <h2 style={{ fontSize: 26, fontWeight: 700, color: C.text, marginBottom: 20 }}>Follow us</h2>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
+        <a href="https://www.instagram.com/igrow.lab" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <InstagramIcon />
+        </a>
+        <a href="https://t.me/iGrow_lab" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <TelegramIcon />
+        </a>
+      </div>
     </section>
   );
 }
