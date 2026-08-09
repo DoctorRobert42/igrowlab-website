@@ -61,7 +61,7 @@ function FAQItem({ q, a, open, onToggle }) {
           gap: 16,
           background: 'none',
           border: 'none',
-          padding: '18px 4px',
+          padding: '9px 4px',
           textAlign: 'left',
           cursor: 'pointer',
         }}
