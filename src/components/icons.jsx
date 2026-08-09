@@ -1,13 +1,16 @@
 // Icons copied verbatim (SVG structure, viewBox, stroke conventions) from
 // igrowlab's src/components/icons.jsx. Light-mode only here (no dark/light
-// toggle on the marketing site), so iconColor()/tileIconColors() keep the
-// same function shape as the source but are always called for light mode.
+// toggle on the marketing site), so iconColor() keeps the same function
+// shape as the source but is always called for light mode.
+// Trimmed to only the icons actually used, each picked for a real semantic
+// fit to its feature card (see commit message for the per-card reasoning).
 
-// Subset of ICON_ROLES actually used by the icons below (accent, lampGold),
-// values copied verbatim from src/constants.js.
+// Subset of ICON_ROLES actually used below (accent, soil, neutral), values
+// copied verbatim from src/constants.js.
 const ICON_ROLES = {
   accent: { l: '#4A7856', d: '#9B7FF0' },
-  lampGold: { l: '#F2B632', d: '#F2B632' },
+  soil: { l: '#7A5A38', d: '#D4A56A' },
+  neutral: { l: '#7E837C', d: '#CBD3E2', aL: 0.26, aD: 0.24 },
 };
 
 function withAlpha(hex, a) {
@@ -24,28 +27,10 @@ function iconColor(role, isDark = false) {
   return { fg, bg: withAlpha(fg, a) };
 }
 
-function tileIconColors(isDark = false) {
-  return {
-    fg: isDark ? '#9B7FF0' : '#4A7856',
-    bg: isDark ? withAlpha('#7B5FE0', 0.16) : '#E3EEE3',
-  };
-}
-
-export function GrowTentIcon({ size = 22 }) {
-  const { fg, bg } = iconColor('accent');
-  return (
-    <svg width={size} height={size} viewBox="0 0 34 34">
-      <circle cx="17" cy="17" r="17" fill={bg} />
-      <path d="M6 10c.4-.9 1.3-1.4 2.6-1.6h16.8c1.3.2 2.2.7 2.6 1.6v15c-.4.9-1.3 1.4-2.6 1.6H8.6c-1.3-.2-2.2-.7-2.6-1.6z" fill="none" stroke={fg} strokeWidth="2" strokeLinejoin="round" />
-      <line x1="17" y1="9" x2="17" y2="25" stroke={fg} strokeWidth="1.8" />
-      <line x1="11.5" y1="16.5" x2="14" y2="16.5" stroke={fg} strokeWidth="1.6" strokeLinecap="round" />
-      <line x1="20" y1="16.5" x2="22.5" y2="16.5" stroke={fg} strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
+// Precision EC/pH engine — measurement/lab metaphor.
 export function FlaskIcon({ size = 30 }) {
-  const { fg, bg } = tileIconColors();
+  const fg = '#4A7856';
+  const bg = '#E3EEE3'; // tileIconColors() literal from icons.jsx, light mode
   return (
     <svg width={size} height={size} viewBox="0 0 34 34" fill="none">
       <circle cx="17" cy="17" r="17" fill={bg} />
@@ -55,39 +40,43 @@ export function FlaskIcon({ size = 30 }) {
   );
 }
 
-export function SunIcon({ size = 22 }) {
-  const { fg, bg } = iconColor('lampGold');
+// Substrate memory — literal soil/substrate, not a generic plant icon.
+export function SoilIcon({ size = 30 }) {
+  const { fg, bg } = iconColor('soil');
   return (
     <svg width={size} height={size} viewBox="0 0 34 34">
       <circle cx="17" cy="17" r="17" fill={bg} />
-      <circle cx="17" cy="17" r="7" fill={fg} />
-      <line x1="17" y1="3" x2="17" y2="7" stroke={fg} strokeWidth="2" strokeLinecap="round" />
-      <line x1="17" y1="27" x2="17" y2="31" stroke={fg} strokeWidth="2" strokeLinecap="round" />
-      <line x1="3" y1="17" x2="7" y2="17" stroke={fg} strokeWidth="2" strokeLinecap="round" />
-      <line x1="27" y1="17" x2="31" y2="17" stroke={fg} strokeWidth="2" strokeLinecap="round" />
-      <line x1="6.5" y1="6.5" x2="9.3" y2="9.3" stroke={fg} strokeWidth="2" strokeLinecap="round" />
-      <line x1="24.7" y1="24.7" x2="27.5" y2="27.5" stroke={fg} strokeWidth="2" strokeLinecap="round" />
-      <line x1="6.5" y1="27.5" x2="9.3" y2="24.7" stroke={fg} strokeWidth="2" strokeLinecap="round" />
-      <line x1="24.7" y1="9.3" x2="27.5" y2="6.5" stroke={fg} strokeWidth="2" strokeLinecap="round" />
+      <path d="M5 24c2-6 7-10 12-10s10 4 12 10z" fill={fg} />
+      <circle cx="11" cy="20" r="1" fill="#5E4328" />
+      <circle cx="17" cy="16.5" r="1" fill="#5E4328" />
+      <circle cx="23" cy="20" r="1" fill="#5E4328" />
+      <line x1="3" y1="24" x2="31" y2="24" stroke={fg} strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }
 
-export function PlantsIcon({ size = 22 }) {
-  const { fg, bg } = tileIconColors();
+// Built your way — manual editing/configuration, literal pencil.
+export function EditIcon({ size = 30 }) {
+  const { fg, bg } = iconColor('neutral');
   return (
     <svg width={size} height={size} viewBox="0 0 34 34">
       <circle cx="17" cy="17" r="17" fill={bg} />
-      <g fill={fg}>
-        <path d="M17,26 C14.5,19 14.5,12 17,6 C19.5,12 19.5,19 17,26 Z" />
-        <path d="M17,26 C15,20.5 15,14.5 17,10 C19,14.5 19,20.5 17,26 Z" transform="rotate(-28 17 26)" />
-        <path d="M17,26 C15,20.5 15,14.5 17,10 C19,14.5 19,20.5 17,26 Z" transform="rotate(28 17 26)" />
-        <path d="M17,26 C15.5,22 15.5,17.5 17,14 C18.5,17.5 18.5,22 17,26 Z" transform="rotate(-56 17 26)" />
-        <path d="M17,26 C15.5,22 15.5,17.5 17,14 C18.5,17.5 18.5,22 17,26 Z" transform="rotate(56 17 26)" />
-        <path d="M17,26 C16,23 16,20 17,17.5 C18,20 18,23 17,26 Z" transform="rotate(-82 17 26)" />
-        <path d="M17,26 C16,23 16,20 17,17.5 C18,20 18,23 17,26 Z" transform="rotate(82 17 26)" />
+      <path d="M11 21.5l-1.6 5.6 5.6-1.6L26.5 14a2.6 2.6 0 000-3.7l-.8-.8a2.6 2.6 0 00-3.7 0z" fill="none" stroke={fg} strokeWidth="2.1" strokeLinejoin="round" />
+      <line x1="21" y1="11.5" x2="25.5" y2="16" stroke={fg} strokeWidth="2.1" />
+    </svg>
+  );
+}
+
+// Full cycle log — literal journal/record.
+export function BookIcon({ size = 30 }) {
+  const { fg, bg } = iconColor('accent');
+  return (
+    <svg width={size} height={size} viewBox="0 0 34 34">
+      <circle cx="17" cy="17" r="17" fill={bg} />
+      <g transform="translate(17,17) scale(0.85) translate(-24,-22)">
+        <path d="M24 12c-3-2-8-2.4-12-1v22c4-1.4 9-1 12 1 3-2 8-2.4 12-1V11c-4-1.4-9-1-12 1z" fill="none" stroke={fg} strokeWidth="2.1" strokeLinejoin="round" />
+        <line x1="24" y1="12" x2="24" y2="34" stroke={fg} strokeWidth="2.1" />
       </g>
-      <path d="M17,26 L17,29.5" stroke={fg} strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }

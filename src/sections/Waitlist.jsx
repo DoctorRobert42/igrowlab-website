@@ -51,6 +51,8 @@ export function Waitlist() {
           </div>
         ) : (
           <form onSubmit={onSubmit} style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
+            {/* Input styling copied verbatim from the app's real form-input helper
+                (getIS in ui.jsx): border 1.5px C.border, radius 12, fontSize 14. */}
             <input
               type="email"
               required
@@ -63,23 +65,25 @@ export function Waitlist() {
                 background: C.white,
                 border: `1.5px solid ${C.border}`,
                 borderRadius: 12,
-                padding: '13px 16px',
+                padding: '9px 14px',
                 fontSize: 14,
                 color: C.text,
                 outline: 'none',
               }}
             />
+            {/* Compact primary button style copied verbatim from the app's
+                "Unlock Pro" button (ui.jsx:731). */}
             <button
               type="submit"
               disabled={status === 'loading'}
               style={{
-                background: C.leaf,
-                color: '#fff',
+                background: C.accent,
+                color: C.white,
                 fontWeight: 700,
-                fontSize: 14,
+                fontSize: 13.5,
                 border: 'none',
                 borderRadius: 12,
-                padding: '13px 26px',
+                padding: '10px 20px',
                 cursor: status === 'loading' ? 'default' : 'pointer',
                 opacity: status === 'loading' ? 0.7 : 1,
               }}

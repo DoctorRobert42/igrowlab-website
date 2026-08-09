@@ -1,7 +1,6 @@
 import { Header } from './sections/Header';
 import { Hero } from './sections/Hero';
 import { Problem } from './sections/Problem';
-import { Divider } from './components/Divider';
 import { Features } from './sections/Features';
 import { Philosophy } from './sections/Philosophy';
 import { ComingSoon } from './sections/ComingSoon';
@@ -16,7 +15,6 @@ export default function App() {
       <Header />
       <Hero />
       <Problem />
-      <Divider />
       <Features />
       <Philosophy />
       <ComingSoon />

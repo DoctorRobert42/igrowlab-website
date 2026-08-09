@@ -1,31 +1,26 @@
-import { FlaskIcon, SunIcon, PlantsIcon, GrowTentIcon } from '../components/icons';
-import { StageProgression } from '../components/StageProgression';
+import { FlaskIcon, SoilIcon, EditIcon, BookIcon } from '../components/icons';
 import { EyebrowLabel } from '../components/EyebrowLabel';
+import professor from '../assets/professor.jpg';
 import { C, R } from '../theme';
 
-const FEATURES = [
+const ICON_FEATURES = [
   {
     icon: <FlaskIcon size={30} />,
     title: 'Precision EC/pH engine',
     body: "targets that shift with your plant's actual phase, substrate, and pot size, calculated fresh every time, never a fixed chart you have to interpret yourself.",
   },
   {
-    icon: <SunIcon size={30} />,
-    title: 'Professor Terpenov',
-    body: "reads your last twelve waterings before every analysis, EC, pH, runoff, doses. Catches the trend, not just today's number.",
-  },
-  {
-    icon: <PlantsIcon size={30} />,
+    icon: <SoilIcon size={30} />,
     title: 'Substrate memory',
     body: 'knows what your soil is still holding onto between waterings.',
   },
   {
-    icon: <GrowTentIcon size={30} />,
+    icon: <EditIcon size={30} />,
     title: 'Built your way',
     body: 'every threshold, every nutrient ratio, every cycle stage and seedling ramp. Set it manually, exactly how you grow.',
   },
   {
-    icon: <StageProgression size={11} gap={5} />,
+    icon: <BookIcon size={30} />,
     title: 'Full cycle log',
     body: 'every watering, every photo, every note, one continuous record from seed to harvest.',
   },
@@ -41,20 +36,50 @@ function FeatureCard({ icon, title, body }) {
         padding: '26px 24px',
       }}
     >
-      <div
-        style={{
-          width: 52,
-          height: 52,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: 16,
-        }}
-      >
+      <div style={{ width: 52, height: 52, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
         {icon}
       </div>
       <h3 style={{ fontSize: 16, fontWeight: 700, color: C.text, marginBottom: 8 }}>{title}</h3>
       <p style={{ fontSize: 14, lineHeight: 1.6, color: C.textMid }}>{body}</p>
+    </div>
+  );
+}
+
+// The real ProfCard treatment, copied verbatim from ui.jsx:388-408: solid
+// C.leaf background, R.card radius, 55x55 circular avatar (borderRadius:28)
+// next to an uppercase "PROF. TERPENOV" pill badge (bg rgba(255,255,255,0.18)
+// on the green card). This is the actual card the app uses everywhere it
+// shows the Professor - not an approximation.
+function ProfessorCard() {
+  return (
+    <div
+      style={{
+        background: C.leaf,
+        borderRadius: R.card,
+        padding: '22px 24px',
+        gridColumn: 'span 2',
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+        <img src={professor} style={{ width: 55, height: 55, borderRadius: 28, objectFit: 'cover', flexShrink: 0 }} alt="Prof. Terpenov" />
+        <span
+          style={{
+            background: 'rgba(255,255,255,0.18)',
+            borderRadius: 8,
+            padding: '3px 10px',
+            fontSize: 9,
+            fontWeight: 700,
+            letterSpacing: 2,
+            color: 'rgba(255,255,255,0.95)',
+            textTransform: 'uppercase',
+          }}
+        >
+          Prof. Terpenov
+        </span>
+      </div>
+      <p style={{ fontSize: 14, lineHeight: 1.6, color: 'rgba(255,255,255,0.88)' }}>
+        reads your last twelve waterings before every analysis, EC, pH, runoff, doses. Catches the trend, not just today's number.
+      </p>
     </div>
   );
 }
@@ -71,7 +96,8 @@ export function Features() {
           marginTop: 8,
         }}
       >
-        {FEATURES.map((f) => (
+        <ProfessorCard />
+        {ICON_FEATURES.map((f) => (
           <FeatureCard key={f.title} {...f} />
         ))}
       </div>
