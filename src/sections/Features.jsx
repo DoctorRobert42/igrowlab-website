@@ -1,4 +1,4 @@
-import { FlaskIcon, SoilIcon, EditIcon, BookIcon } from '../components/icons';
+import { FlaskIcon, SoilIcon, EditIcon, BookIcon, GeneticsIcon, CuringIcon, NotesIcon } from '../components/icons';
 import { EyebrowLabel } from '../components/EyebrowLabel';
 import professor from '../assets/professor.jpg';
 import { C, R } from '../theme';
@@ -23,6 +23,21 @@ const ICON_FEATURES = [
     icon: <BookIcon size={30} />,
     title: 'Full cycle log',
     body: 'every watering, every photo, every note, one continuous record from seed to harvest.',
+  },
+  {
+    icon: <GeneticsIcon size={30} />,
+    title: 'Journal',
+    body: "Every finished grow gets summarized automatically: yield efficiency, EC and pH drift, a professor-written verdict. Plus genetics tracking across every strain you've grown, cycle after cycle.",
+  },
+  {
+    icon: <CuringIcon size={30} />,
+    title: 'Harvest to cure',
+    body: 'Guided stages from harvest through drying and curing, with real environment logging and concrete humidity and timing targets at every step.',
+  },
+  {
+    icon: <NotesIcon size={30} />,
+    title: 'Reference, always on hand',
+    body: 'Every EC and pH target, every nutrient table, built right into the app. No digging through old forum posts mid-watering.',
   },
 ];
 
@@ -77,7 +92,7 @@ function ProfessorCard() {
         </span>
       </div>
       <p style={{ fontSize: 14, lineHeight: 1.6, color: 'rgba(255,255,255,0.88)' }}>
-        reads your last twelve waterings before every analysis, EC, pH, runoff, doses. Catches the trend, not just today's number.
+        reads your last twelve waterings before every analysis, EC, pH, runoff, doses, catching the trend, not just today's number. Looks at your photos, checking for visible stress signs and anything worth a closer look. And when the curing is done, he writes the final verdict on the whole cycle.
       </p>
     </div>
   );
